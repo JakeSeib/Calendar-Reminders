@@ -1,15 +1,9 @@
 import React from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
+import Calendar from './features/calendar/Calendar'
 import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <FullCalendar
-      plugins={[ dayGridPlugin, interactionPlugin ]}
-    />
+    <Calendar />
   )
 }
-
-export default App
