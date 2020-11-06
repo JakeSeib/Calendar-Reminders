@@ -5,7 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { selectEvents } from './calendarSlice'
 
-export default function Calendar() {
+export default function Calendar({ handleOpen }) {
   const events = useSelector(selectEvents)
 
   return (
@@ -15,7 +15,7 @@ export default function Calendar() {
       initialView='dayGridMonth'
       events={events}
       dateClick={(arg) => console.log('date click arg', arg)}
-      eventClick={(arg) => console.log('event click arg', arg)}
+      eventClick={handleOpen}
     />
   )
 }
