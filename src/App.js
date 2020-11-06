@@ -4,15 +4,12 @@ import Reminder from './features/reminder/Reminder'
 import './App.css'
 
 export default function App() {
-  const [show, setShow] = useState(false)
-
-  const handleOpen = () => setShow(true)
-  const handleClose = () => setShow(false)
+  const [currEvent, setCurrEvent] = useState(null)
 
   return (
     <Fragment>
-      <Calendar handleOpen={handleOpen} />
-      <Reminder show={show} handleClose={handleClose} />
+      <Calendar setCurrEvent={setCurrEvent} />
+      {currEvent ? <Reminder currEvent={currEvent} setCurrEvent={setCurrEvent} /> : null}
     </Fragment>
   )
 }

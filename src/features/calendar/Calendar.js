@@ -5,8 +5,10 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { selectEvents } from './calendarSlice'
 
-export default function Calendar({ handleOpen }) {
+export default function Calendar({ setCurrEvent }) {
   const events = useSelector(selectEvents)
+
+  const handleOpen = info => setCurrEvent(info.event)
 
   return (
     <FullCalendar
