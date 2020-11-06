@@ -15,10 +15,18 @@ export default function Calendar({ setCurrEvent }) {
   const events = getEventArray(eventsById)
   const dispatch = useDispatch()
 
+  const handleDateClick = (arg) => {
+    setCurrEvent({
+      title: '',
+      start: `${arg.dateStr}T12:00`,
+      display: 'block',
+      backgroundColor: '#0275d8'
+    })
+  }
+
   const handleEventClick = (info) => {
     setCurrEvent(eventsById[info.event.id])
   }
-
   const handleEventChange = (changeInfo) => {
     return dispatch(updateEvent(changeInfo.event.toPlainObject()))
   }
@@ -29,7 +37,7 @@ export default function Calendar({ setCurrEvent }) {
       editable='true'
       initialView='dayGridMonth'
       events={events}
-      dateClick={(arg) => console.log('date click arg', arg)}
+      dateClick={handleDateClick}
       eventClick={handleEventClick}
       eventChange={handleEventChange} // called for drag-n-drop/resize
     />
