@@ -22,6 +22,8 @@ To create a new event, click a date on the calendar, fill out the form, and clic
 This app is not connected to an external database- all events are all stored in memory.
 
 ## Issues and Improvements
+- Events are stored in memory, and will disappear on page refresh. For a larger-scale version of this project, an external database should be used to store events so they do not disappear.
+- Event overflow: When many events are added to a single day, the calendar will expand to accommodate all of them. It may be more aesthetic to instead add a scrollbar and maintain the orignal day's size.
 - `findDOMNode is deprecated in StrictMode` console warning: Known issue with current release of react-bootstrap
 - Better date/time handling to, for example, capture timezone information. Currently manually formatting from form into ISO8601 format
 - Better UI for adding new events: Either make it more obvious that dates can be clicked, or add separate 'Create Reminder' button
