@@ -1,14 +1,27 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import { selectEvents } from './calendarSlice'
+import { createSelector } from 'reselect'
+import { updateEvent, selectEventsById } from './calendarSlice'
 
 export default function Calendar({ setCurrEvent }) {
-  const events = useSelector(selectEvents)
+  const eventsById = useSelector(selectEventsById)
+  const getEventArray = createSelector(
+    (eventsById) => eventsById,
+    hash => Object.values(hash) // incompatible with older browsers
+  )
+  const events = getEventArray(eventsById)
+  const dispatch = useDispatch()
 
-  const handleOpen = info => setCurrEvent(info.event)
+  const handleEventClick = (info) => {
+    setCurrEvent(eventsById[info.event.id])
+  }
+
+  const handleEventChange = (changeInfo) => {
+    return dispatch(updateEvent(changeInfo.event.toPlainObject()))
+  }
 
   return (
     <FullCalendar
@@ -17,7 +30,8 @@ export default function Calendar({ setCurrEvent }) {
       initialView='dayGridMonth'
       events={events}
       dateClick={(arg) => console.log('date click arg', arg)}
-      eventClick={handleOpen}
+      eventClick={handleEventClick}
+      eventChange={handleEventChange} // called for drag-n-drop/resize
     />
   )
 }
