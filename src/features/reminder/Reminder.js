@@ -58,7 +58,7 @@ export default function Reminder({ currEvent, setCurrEvent }) {
 
   return <Modal show={true} onHide={handleClose}>
     <Modal.Header closeButton>
-      <Modal.Title>Modal heading</Modal.Title>
+      <Modal.Title>{currEvent.id ? 'Edit Reminder' : 'Create Reminder'}</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <Form className='reminder-form' onSubmit={handleEventSubmit}>
@@ -117,7 +117,7 @@ export default function Reminder({ currEvent, setCurrEvent }) {
           </Form.Control>
         </Form.Group>
         <Button variant="primary" type="submit">Save</Button>
-        <Button variant="danger" onClick={handleDelete}>Delete</Button>
+        {currEvent.id ? <Button variant="danger" onClick={handleDelete}>Delete</Button> : null}
         <Button variant="secondary" onClick={handleClose}>Close</Button>
       </Form>
     </Modal.Body>
