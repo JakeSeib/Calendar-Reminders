@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Button from 'react-bootstrap/Button'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { createSelector } from 'reselect'
 import { updateEvent, selectEventsById } from './calendarSlice'
+import styles from './Calendar.module.css'
 
 export default function Calendar({ setCurrEvent }) {
   const eventsById = useSelector(selectEventsById)
@@ -27,9 +29,14 @@ export default function Calendar({ setCurrEvent }) {
   const handleEventClick = (info) => {
     setCurrEvent(eventsById[info.event.id])
   }
+
   const handleEventChange = (changeInfo) => {
     return dispatch(updateEvent(changeInfo.event.toPlainObject()))
   }
+
+  const dayCellContent = (arg) => (
+    <Button className={styles['button-date_num']}>{arg.dayNumberText}</Button>
+  )
 
   return (
     <FullCalendar
@@ -40,6 +47,7 @@ export default function Calendar({ setCurrEvent }) {
       dateClick={handleDateClick}
       eventClick={handleEventClick}
       eventChange={handleEventChange} // called for drag-n-drop/resize
+      dayCellContent={dayCellContent}
     />
   )
 }
