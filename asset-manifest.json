@@ -1,6 +1,23 @@
 {
-  "main.css": "static/css/main.cd8980c0.css",
-  "main.css.map": "static/css/main.cd8980c0.css.map",
-  "main.js": "static/js/main.2f7a371e.js",
-  "main.js.map": "static/js/main.2f7a371e.js.map"
+  "files": {
+    "main.css": "/calendar-reminders/static/css/main.7dcc24f8.chunk.css",
+    "main.js": "/calendar-reminders/static/js/main.f354f51b.chunk.js",
+    "main.js.map": "/calendar-reminders/static/js/main.f354f51b.chunk.js.map",
+    "runtime-main.js": "/calendar-reminders/static/js/runtime-main.c809b934.js",
+    "runtime-main.js.map": "/calendar-reminders/static/js/runtime-main.c809b934.js.map",
+    "static/css/2.c56f3e2d.chunk.css": "/calendar-reminders/static/css/2.c56f3e2d.chunk.css",
+    "static/js/2.1dd4f422.chunk.js": "/calendar-reminders/static/js/2.1dd4f422.chunk.js",
+    "static/js/2.1dd4f422.chunk.js.map": "/calendar-reminders/static/js/2.1dd4f422.chunk.js.map",
+    "index.html": "/calendar-reminders/index.html",
+    "static/css/2.c56f3e2d.chunk.css.map": "/calendar-reminders/static/css/2.c56f3e2d.chunk.css.map",
+    "static/css/main.7dcc24f8.chunk.css.map": "/calendar-reminders/static/css/main.7dcc24f8.chunk.css.map",
+    "static/js/2.1dd4f422.chunk.js.LICENSE.txt": "/calendar-reminders/static/js/2.1dd4f422.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c809b934.js",
+    "static/css/2.c56f3e2d.chunk.css",
+    "static/js/2.1dd4f422.chunk.js",
+    "static/css/main.7dcc24f8.chunk.css",
+    "static/js/main.f354f51b.chunk.js"
+  ]
 }
