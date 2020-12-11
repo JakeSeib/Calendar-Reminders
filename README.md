@@ -15,7 +15,7 @@ then
 and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## How To Use
-The app starts with a few events (in November 2020) already in place. Events can be dragged and dropped to change their dates. Clicking an event allows you to change any of their fields, or delete the event.
+The app starts with a few events already in place. Events can be dragged and dropped to change their dates. Clicking an event allows you to change any of their fields, or delete the event.
 
 To create a new event, click a date on the calendar, fill out the form, and click 'Save'.
 
